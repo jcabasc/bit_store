@@ -1,0 +1,46 @@
+<div class="container-fluid">
+<h2>Listado de Compras</h2>
+<table>
+  <tr>
+    <th>id</th>
+    <th>Cliente</th>
+    <th>Producto</th>
+    <th>Precio</th>
+    <th>Descripcion</th>
+    <th>Sede</th>
+    <th>Fecha</th>
+  </tr>
+  <% purchases.each do |purchase| %>
+    <tr>
+      <td>
+        <%= purchase.id %>
+      </td>
+      <td>
+        <%= purchase.client.try(:nombres) %>
+      </td>
+      <td>
+        <%= purchase.product.try(:producto) %>
+      </td>
+      <td>
+        <%= purchase.precio %>
+      </td>
+      <td>
+        <%= purchase.descripcion %>
+      </td>
+      <td>
+        <%= purchase.id_sede %>
+      </td>
+      <td>
+        <%= purchase.fecha %>
+      </td>
+      <td>
+        <%= link_to 'Eliminar', purchase, :method => :delete %>
+        <%= link_to 'Mostrar', purchase %>
+        <%= link_to 'Editar', edit_purchase_path(purchase) %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+<br/>
+</div>
+<%= link_to 'Nueva Compra', new_purchase_path %>

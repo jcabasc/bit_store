@@ -1,0 +1,40 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <h2><%= purchase.id %></h2>
+      <div class="btn-group btn-group-sm">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <p>Cliente: <%= purchase.client.try(:nombres) %> </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <p>Producto: <%= purchase.product.try(:producto) %> </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <p>Precio: <%= purchase.precio %> </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <p>Descripcion: <%= purchase.descripcion %> </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <p>Sede: <%= purchase.id_sede %> </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <p>Fecha: <%= purchase.fecha %> </p>
+    </div>
+  </div>
+</div>
+<%= link_to "Listado de compras", purchases_path %>
