@@ -1,0 +1,26 @@
+<div class="container">
+  <%= form_for (headquarter), html: {class: "form-horizontal"} do |f| %>
+    <% headquarter.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+    <div class="form-group">
+      <%= f.label :sede, class: "col-sm-2 text-left" %>
+      <div class="col-sm-4">
+        <%= f.text_field :sede , class: "form-control" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :direccion, class: "col-sm-2 text-left" %>
+      <div class="col-sm-4">
+        <%= f.text_field :direccion, class: "form-control" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-4">
+        <%= f.submit nil, class: "btn btn-success" %>
+      </div>
+    </div>
+  <% end %>
+</div>

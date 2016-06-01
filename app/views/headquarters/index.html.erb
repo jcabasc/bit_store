@@ -1,0 +1,27 @@
+<div class="container-fluid">
+<h2>Listado de Sedes</h2>
+<table>
+  <tr>
+    <th>Nombre Sede</th>
+    <th>Direccion</th>
+    <th>Actions</th>
+  </tr>
+  <% headquarters.each do |hq| %>
+    <tr>
+      <td>
+        <%= hq.sede %>
+      </td>
+      <td>
+        <%= hq.direccion %>
+      </td>
+      <td>
+        <%= link_to 'Eliminar', hq, :method => :delete %>
+        <%= link_to 'Mostrar', hq %>
+        <%= link_to 'Editar', edit_headquarter_path(hq) %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+<br/>
+</div>
+<%= link_to 'Nueva Sede', new_headquarter_path %>
