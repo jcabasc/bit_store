@@ -1,0 +1,32 @@
+<div class="container">
+  <%= form_for (product), html: {class: "form-horizontal"} do |f| %>
+    <% product.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+    <div class="form-group">
+      <%= f.label :producto, class: "col-sm-2 text-left" %>
+      <div class="col-sm-4">
+        <%= f.text_field :producto , class: "form-control" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :precio, class: "col-sm-2 text-left" %>
+      <div class="col-sm-4">
+        <%= f.text_field :precio, class: "form-control" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :descripcion, class: "col-sm-2 text-left" %>
+      <div class="col-sm-4">
+        <%= f.text_area :descripcion, class: "form-control" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-4">
+        <%= f.submit nil, class: "btn btn-success" %>
+      </div>
+    </div>
+  <% end %>
+</div>
