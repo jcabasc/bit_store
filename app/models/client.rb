@@ -1,4 +1,5 @@
 class Client < ActiveRecord::Base
+  include EventRecorder
   self.table_name = "clientes"
   has_many :purchases, foreign_key: "id_cliente", dependent: :destroy, inverse_of: 'client'
   has_many :products, through: :purchases
