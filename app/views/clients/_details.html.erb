@@ -26,11 +26,5 @@
         </td>
       </tr>
     <% end %>
-    <tr>
-      <td>Total precio</td>
-      <td><%= client.total_price %></td>
-    </tr>
   </table>
 </div>
-<%= link_to "Listado de clientes", clients_path %>
-<%= link_to "Generar PDF", export_path(client_id: client.id), method: :post %>

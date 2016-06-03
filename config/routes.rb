@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :purchases
   resources :logs, only: [:index]
   resource :weekly_report, only: [:create]
+  resource :export, only: [:create]
 
   namespace :api, defaults: {format: 'json'} do
     namespace :v1 do
