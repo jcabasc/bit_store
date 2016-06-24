@@ -8,7 +8,7 @@ module EventRecorder
   end
 
   def call(action)
-    Log.create(fecha: Time.now, descripcion: build_description(action))
+    # Log.create(fecha: Time.now, descripcion: build_description(action))
   end
 
   private
